@@ -71,9 +71,9 @@ test('reading health as admin', async () => {
 						],
 					}
 				: {}),
-			...(options.extras?.minio
+			...(options.extras?.rustfs
 				? {
-						'storage:minio:responseTime': [
+						'storage:rustfs:responseTime': [
 							{
 								componentType: 'objectstore',
 								observedUnit: 'ms',
