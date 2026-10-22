@@ -3,7 +3,7 @@ name: e2e Tests
 on:
   push:
     branches:
-      - main
+      - v11
     paths:
       - api/**
       - tests/**
