@@ -34,7 +34,7 @@ import type { Knex } from 'knex';
 import { set } from 'lodash-es';
 import ms, { type StringValue } from 'ms';
 import Papa from 'papaparse';
-import StreamArray from 'stream-json/streamers/StreamArray.js';
+import streamArray from 'stream-json/streamers/stream-array.js';
 import { parseFields } from '../database/get-ast-from-query/lib/parse-fields.js';
 import getDatabase from '../database/index.js';
 import emitter from '../emitter.js';
@@ -338,7 +338,7 @@ export class ImportService {
 	}
 
 	async importJSON(collection: string, stream: Readable): Promise<void> {
-		const extractJSON = StreamArray.withParser();
+		const extractJSON = streamArray.withParserAsStream();
 		const nestedActionEvents: ActionEventParams[] = [];
 		const errorTracker = createErrorTracker();
 		const isSingleton = this.schema.collections[collection]?.singleton ?? false;
