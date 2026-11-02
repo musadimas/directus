@@ -11,7 +11,7 @@ permissions:
 
 env:
   DOCKERHUB_IMAGE: docker.io/slaint/directus
-  NPM_SCOPE: '@slt'
+  NPM_SCOPE: '@slaint.dev'
 
 jobs:
   check-version:

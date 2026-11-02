@@ -1,5 +1,5 @@
 // Renames the public workspace packages to the fork's npm scope right before publishing.
-// Internal dependencies become npm aliases (e.g. "@directus/utils": "npm:@slt/utils@13.4.1-slt.1"),
+// Internal dependencies become npm aliases (e.g. "@directus/utils": "npm:@slaint.dev/utils@13.4.1-slt.1"),
 // so the code keeps importing "@directus/*" and nothing in the source tree has to be renamed.
 //
 // Usage: node .github/scripts/prepare-npm-publish.js <scope> <repository-url>
