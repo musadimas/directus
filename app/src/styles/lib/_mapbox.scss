@@ -203,6 +203,7 @@
  * the maplibre names; draw still writes the `mouse-*`/`mode-*`/`feature-*` state classes itself.
  * Mirrors the cursor block in mapbox-gl-draw.css, minus its -moz-/-webkit-grab fallbacks.
  */
+/* stylelint-disable-next-line no-duplicate-selectors */
 .maplibregl-map {
 	$canvas: '.maplibregl-canvas-container.maplibregl-interactive';
 
