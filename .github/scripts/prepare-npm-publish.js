@@ -1,5 +1,6 @@
-// Renames the public workspace packages to the fork's npm scope right before publishing.
-// Internal dependencies become npm aliases (e.g. "@directus/utils": "npm:@slaint.dev/utils@13.4.1-slt.1"),
+// Renames the public workspace packages to the fork's npm scope right before publishing:
+// "directus" becomes "<scope>/directus" and "@directus/<name>" becomes "<scope>/directus-<name>".
+// Internal dependencies become npm aliases (e.g. "@directus/utils": "npm:@slaint.dev/directus-utils@13.4.1-slt.1"),
 // so the code keeps importing "@directus/*" and nothing in the source tree has to be renamed.
 //
 // Usage: node .github/scripts/prepare-npm-publish.js <scope> <repository-url>
@@ -45,7 +46,7 @@ for (const { name, version } of packages) {
 	if (skip.has(name)) continue;
 
 	renamed.set(name, {
-		name: `${scope}/${name.replace(/^@directus\//, '')}`,
+		name: `${scope}/${name.replace(/^@directus\//, 'directus-')}`,
 		version: version.endsWith(`-${suffix}`) ? version : `${version}-${suffix}`,
 	});
 }
