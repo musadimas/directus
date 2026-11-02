@@ -10,7 +10,7 @@ permissions:
   id-token: write
 
 env:
-  DOCKERHUB_IMAGE: docker.io/slaint/directus-11
+  DOCKERHUB_IMAGE: docker.io/slaint/directus
 
 jobs:
   check-version:
@@ -188,4 +188,4 @@ jobs:
         run: |
           gh release create "$GITHUB_REF_NAME" \
             --target "$GITHUB_SHA" \
-            --notes "Directus $GITHUB_REF_NAME (docker.io/slaint/directus-11:${GITHUB_REF_NAME#v})"
+            --notes "Directus $GITHUB_REF_NAME (docker.io/slaint/directus:${GITHUB_REF_NAME#v})"
